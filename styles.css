@@ -1,0 +1,79 @@
+/* Reset some default styles to ensure consistency */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+/* Main content section */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Map section */
+#map {
+    height: 400px;
+    margin-bottom: 20px;
+    /* Add further styling for your map here */
+}
+
+/* Alerts section */
+#alerts {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#alerts h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive design - adjust styles for smaller screens */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+    
+    main {
+        padding: 10px;
+    }
+    
+    #map {
+        height: 300px;
+    }
+}
