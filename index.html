@@ -16,7 +16,7 @@
     crossorigin=""></script>
 
     <style>
-        #map { height: 350px; }
+        #map { height: 500px; }
     </style>
 
 </head>
@@ -33,7 +33,7 @@ var map = L.map('map');
 map.setView([6.11, 125.17], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 30,
+    maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -55,14 +55,12 @@ function success(pos){
     marker = L.marker([lat, lng]).addTo(map);
     marker = L.circle([lat, lng], { radius: accuracy}).addTo(map);
 
-
     if(!zoomed) {
         zoomed = map.fitBounds(circle.getBounds());
     }
     
     map.setView([lat, lng]);
 
-
 }
 
 function error(err){
@@ -74,25 +72,6 @@ function error(err){
     }
 
 }
-
-
-</script>
-</html>
-    
-
-
-}
-
-function error(err){
-
-    if (err.code === 1){
-        alert("Please alloaw geolocation access");
-    } else {
-        alert("Cannot get current location u dumbfuck")
-    }
-
-}
-
 
 </script>
 </html>
