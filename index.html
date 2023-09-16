@@ -45,8 +45,10 @@ function success(pos){
     const lng = pos.coords.longitude;
     const accuracy = pos.coords.accuracy;
 
-    L.marker([lat, lng]).addTo(map);
-    L.circle([lat, lng], {radius:accuracy}).addTo(map);
+    let marker = L.marker([lat, lng]).addTo(map);
+    let marker = L.circle([lat, lng], {radius:accuracy}).addTo(map);
+
+    map.fitBounds(circle.getBounds());
 
 
 }
