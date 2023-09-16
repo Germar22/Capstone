@@ -60,6 +60,25 @@ function success(pos){
         zoomed = map.fitBounds(circle.getBounds());
     }
     
+    map.setView([lat, lng]);
+
+
+}
+
+function error(err){
+
+    if (err.code === 1){
+        alert("Please alloaw geolocation access");
+    } else {
+        alert("Cannot get current location u dumbfuck")
+    }
+
+}
+
+
+</script>
+</html>
+    
 
 
 }
