@@ -37,6 +37,30 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+navigator.geolocation.clearWatch(success, error);
+
+function success(pos){
+
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    const accuracy = pos.coords.accuracy;
+
+    L.marker([lat, lng]).addTo(map);
+    L.circle([lat, lng], {radius:accuracy}).addTo(map);
+
+
+}
+
+function error(err){
+
+    if (err.code === 1){
+        alert("Please alloaw geolocation access");
+    } else {
+        alert("Cannot get current location u dumbfuck")
+    }
+
+}
+
 
 </script>
 </html>
