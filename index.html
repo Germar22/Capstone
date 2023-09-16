@@ -39,14 +39,21 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 navigator.geolocation.clearWatch(success, error);
 
+let marker, circle;
+
 function success(pos){
 
     const lat = pos.coords.latitude;
     const lng = pos.coords.longitude;
     const accuracy = pos.coords.accuracy;
 
-    let marker = L.marker([lat, lng]).addTo(map);
-    let marker = L.circle([lat, lng], {radius:accuracy}).addTo(map);
+    if (marker) {
+        map.removeLayer(marker);
+        map.removeLayer(circle);
+    }
+
+    marker = L.marker([lat, lng]).addTo(map);
+    marker = L.circle([lat, lng], { radius: accuracy}).addTo(map);
 
     map.fitBounds(circle.getBounds());
 
