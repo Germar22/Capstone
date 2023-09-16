@@ -55,11 +55,13 @@ function success(pos){
     marker = L.marker([lat, lng]).addTo(map);
     marker = L.circle([lat, lng], { radius: accuracy}).addTo(map);
 
+
     if(!zoomed) {
         zoomed = map.fitBounds(circle.getBounds());
     }
     
     map.setView([lat, lng]);
+
 
 }
 
@@ -68,10 +70,11 @@ function error(err){
     if (err.code === 1){
         alert("Please alloaw geolocation access");
     } else {
-        alert("Cannot get current location u dumbfuck")
+        alert("Cannot get current location")
     }
 
 }
+
 
 </script>
 </html>
