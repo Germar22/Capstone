@@ -37,12 +37,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+var marker = L.marker([6.06940, 125.12620], 13).addTo(map);
+
+var marker = L.marker([6.07449, 125.11460], 13).addTo(map);
+
+var marker = L.marker([6.07710, 125.12294], 13).addTo(map);
 
 navigator.geolocation.clearWatch(success, error);
 
 let circle, zoomed;
 
-var marker = L.marker([6.11, 125.17], 13).addTo(map)
 
 function success(pos){
 
